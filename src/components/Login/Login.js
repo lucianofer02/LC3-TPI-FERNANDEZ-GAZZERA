@@ -42,8 +42,8 @@ const Login = ({ onLogin }) => {
   };
   return (
     <div className="login-container">
-      <h2>Bienvenido</h2>
-      <div className="input-container">
+      <div className="login-box">
+        <h2 className="welcome-message">Bienvenido</h2>
         <div className="input-container">
           <input
             className="input-control"
@@ -64,10 +64,10 @@ const Login = ({ onLogin }) => {
           />
         </div>
         {errors[1].isError && <p>{errors[1].text}</p>}
-      </div>
-      <button onClick={signInHandler} className="signin-button" type="button">
+        <button onClick={signInHandler} className="signin-button" type="button">
         Iniciar sesión
       </button>
+      </div>
     </div>
   );
 };
