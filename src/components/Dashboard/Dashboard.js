@@ -12,11 +12,10 @@ const Dashboard = () => {
 
   return (
     <div>
-      <p>hola</p>
+      <NavBar />
       <button onClick={goBackHandler}>cerrar sesion</button>
     </div>
   );
-  <NavBar />
 };
 
 export default Dashboard;
