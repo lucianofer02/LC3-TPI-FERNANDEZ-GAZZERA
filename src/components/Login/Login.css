@@ -1,21 +1,26 @@
 .login-container {
-  width: 100vw;
-  height: 100vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  background-image: url("../pic/descarga.jfif");
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to right, #cb232c, #9F0AD3)
 }
 
+
 .login-box {
-  border: 5px solid cyan;
-  border-radius: 10px;
-  width: 600px;
-  height: 400px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  background-color: #fff;
+  text-align: center;
+  padding: 20px 25px;
+  box-shadow: 0px 5px 10px rgba(71, 3, 6, 0.7);
+}
+
+.login-box title{
+  color: #252525;
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 30px;
 }
 
 .input-container {
