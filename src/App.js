@@ -7,7 +7,6 @@ import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import Protected from './components/routes/Protected';
 import NotFound from "./components/routes/NotFound";
-import NavBar from "./components/NavBar/NavBar"
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
