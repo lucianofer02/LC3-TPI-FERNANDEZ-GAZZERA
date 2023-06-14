@@ -1,11 +1,31 @@
 import "./NewGame.css"
 
-import React from 'react'
+import GameForm from "../GameForm/GameForm"
+import {useState} from 'react'
 
-const NewGame = () => {
+const NewGame = ({onGameAdded}) => {
+  const [showForm, setShowForm] = useState(false);
+
+  const onGameAddedHandler = (game) => {
+    console.log(game);
+    console.log("In new game");
+    console.log(game);
+  };
+  const showGameForm = () => {
+    setShowForm(true);
+  };
+  const hideGameForm = () => {
+    setShowForm(false);
+  };
   return (
-    <div>NewGame</div>
-  )
-}
+    <div className="new-game">
+      {showForm ? (
+        <GameForm onHideForm={hideGameForm} onBookAdded={onGameAddedHandler}/>
+      ) : (
+        <button onClick={showGameForm}>Registrar nuevo videojuego</button>
+      )}
+    </div>
+  );
+};
 
-export default NewGame
+export default NewGame;

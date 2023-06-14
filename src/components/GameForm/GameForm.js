@@ -1,38 +1,38 @@
 import { useState } from "react";
-import "./BookForm.css";
+import "./GameForm.css";
 
-const BookForm = ({ onBookAdded, onHideForm }) => {
+const GameForm = ({ onBookAdded, onHideForm }) => {
   const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
-  const [dateRead, setDateRead] = useState("");
-  const [pageCount, setPageCount] = useState("");
+  const [genre, setGenre] = useState("");
+  const [dateLaunch, setDateLaunch] = useState("");
+  const [cost, setCost] = useState("");
 
   const changeTitleHandler = (event) => {
     setTitle(event.target.value);
   };
 
-  const changeAuthorHandler = (event) => {
-    setAuthor(event.target.value);
+  const changeGenreHandler = (event) => {
+    setGenre(event.target.value);
   };
 
-  const changeDateReadHandler = (event) => {
-    setDateRead(event.target.value);
+  const changeDateLaunchHandler = (event) => {
+    setDateLaunch(event.target.value);
   };
 
-  const changePageCountHandler = (event) => {
-    setPageCount(event.target.value);
+  const changeCostHandler = (event) => {
+    setCost(event.target.value);
   };
 
-  const addBookHandler = (event) => {
+  const addGameHandler = (event) => {
     event.preventDefault();
-    const newBook = {
+    const newGame = {
       id: Math.random(),
       title,
-      author,
-      dateRead: new Date(dateRead),
-      pageCount,
+      genre,
+      dateLaunch: new Date(dateLaunch),
+      cost,
     };
-    onBookAdded(newBook);
+    onBookAdded(newGame);
   };
 
   const hideFormHandler = (event) => {
@@ -42,8 +42,8 @@ const BookForm = ({ onBookAdded, onHideForm }) => {
 
   return (
     <form>
-      <div className="new-book-controls">
-        <div className="new-book-control">
+      <div className="new-game-controls">
+        <div className="new-game-control">
           <label>Título</label>
           <input
             onChange={changeTitleHandler}
@@ -51,28 +51,28 @@ const BookForm = ({ onBookAdded, onHideForm }) => {
             className="input-control"
           />
         </div>
-        <div className="new-book-control">
-          <label>Autor</label>
+        <div className="new-game-control">
+          <label>Género</label>
           <input
-            onChange={changeAuthorHandler}
+            onChange={changeGenreHandler}
             type="text"
             className="input-control"
           />
         </div>
-        <div className="new-book-control">
-          <label>Páginas</label>
+        <div className="new-game-control">
+          <label>Precio</label>
           <input
-            onChange={changePageCountHandler}
+            onChange={changeCostHandler}
             type="number"
             className="input-control"
             min="1"
             step="1"
           />
         </div>
-        <div className="new-book-control">
-          <label>¿Cuándo terminaste de leerlo?</label>
+        <div className="new-game-control">
+          <label>Fecha de lanzamiento</label>
           <input
-            onChange={changeDateReadHandler}
+            onChange={changeDateLaunchHandler}
             type="date"
             className="input-control"
             min="2019-01-01"
@@ -80,12 +80,12 @@ const BookForm = ({ onBookAdded, onHideForm }) => {
           />
         </div>
       </div>
-      <div className="new-book-actions">
+      <div className="new-game-actions">
         <button onClick={hideFormHandler}>Cancelar</button>
-        <button onClick={addBookHandler}>Agregar lectura</button>
+        <button onClick={addGameHandler}>Agregar Videojuego</button>
       </div>
     </form>
   );
 };
 
-export default BookForm;
+export default GameForm;

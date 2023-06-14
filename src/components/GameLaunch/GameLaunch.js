@@ -8,7 +8,7 @@ const GameLaunch = (gameDateLaunch) => {
     <div className="date-container">
         <div>{year}</div>
         <div>{month}</div>
-        <div>{year}</div>
+        <div>{day}</div>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import GameItem from '../GameItem/GameItem'
 
 const Games = ({games, filterYear}) => {
@@ -8,6 +8,7 @@ const Games = ({games, filterYear}) => {
         <GameItem
             key={game.id}
             gameTitle={game.title}
+            gameGenre={game.genre}
             gameCost={game.cost}
             gameDateLaunch={game.dateLaunch}
         />
