@@ -15,10 +15,10 @@ const GameItem = ({gameTitle, gameGenre, gameDateLaunch, gameCost}) => {
 
   return (
     <GameCard>
-        <h2>{gameTitle}</h2>
-        <h3>{gameGenre}</h3>
-        <GameLaunch gameDateLaunch={gameDateLaunch} />
-        <h3>{gameCost}</h3>
+        <h2>{title}</h2>
+        <h4>{gameGenre}</h4>
+        <h4><GameLaunch gameDateLaunch={gameDateLaunch} /></h4>
+        <h4>${gameCost}</h4>
         <button onClick={changeTitleHandler}>Cambiar Titulo</button>
     </GameCard>
   )

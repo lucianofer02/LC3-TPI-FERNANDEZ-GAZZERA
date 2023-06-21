@@ -3,13 +3,13 @@ import "./NewGame.css"
 import GameForm from "../GameForm/GameForm"
 import {useState} from 'react'
 
-const NewGame = ({onGameAdded}) => {
+const NewGame = ({ onGameAdded }) => {
   const [showForm, setShowForm] = useState(false);
 
   const onGameAddedHandler = (game) => {
     console.log(game);
     console.log("In new game");
-    console.log(game);
+    onGameAdded(game);
   };
   const showGameForm = () => {
     setShowForm(true);
@@ -20,7 +20,7 @@ const NewGame = ({onGameAdded}) => {
   return (
     <div className="new-game">
       {showForm ? (
-        <GameForm onHideForm={hideGameForm} onBookAdded={onGameAddedHandler}/>
+        <GameForm onHideForm={hideGameForm} onGameAdded={onGameAddedHandler}/>
       ) : (
         <button onClick={showGameForm}>Registrar nuevo videojuego</button>
       )}

@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { Button } from "react-bootstrap";
 import "./GameForm.css";
 
-const GameForm = ({ onBookAdded, onHideForm }) => {
+const GameForm = ({ onGameAdded, onHideForm }) => {
   const [title, setTitle] = useState("");
   const [genre, setGenre] = useState("");
   const [dateLaunch, setDateLaunch] = useState("");
@@ -32,7 +33,7 @@ const GameForm = ({ onBookAdded, onHideForm }) => {
       dateLaunch: new Date(dateLaunch),
       cost,
     };
-    onBookAdded(newGame);
+    onGameAdded(newGame);
   };
 
   const hideFormHandler = (event) => {
@@ -82,7 +83,7 @@ const GameForm = ({ onBookAdded, onHideForm }) => {
       </div>
       <div className="new-game-actions">
         <button onClick={hideFormHandler}>Cancelar</button>
-        <button onClick={addGameHandler}>Agregar Videojuego</button>
+        <Button onClick={addGameHandler}>Agregar Videojuego</Button>
       </div>
     </form>
   );

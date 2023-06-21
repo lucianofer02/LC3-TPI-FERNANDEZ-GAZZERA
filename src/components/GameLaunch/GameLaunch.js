@@ -1,9 +1,9 @@
 
 
-const GameLaunch = (gameDateLaunch) => {
+const GameLaunch = ({ gameDateLaunch }) => {
     const year = gameDateLaunch.getFullYear();
-    const month = gameDateLaunch.toLocalString("es-AR", { month: "long" })
-    const day = gameDateLaunch.toLocalString("es-AR", { day: "2-digit" })
+    const month = gameDateLaunch.toLocaleString("es-AR", { month: "long" });
+    const day = gameDateLaunch.toLocaleString("es-AR", { day: "2-digit" });
   return (
     <div className="date-container">
         <div>{year}</div>

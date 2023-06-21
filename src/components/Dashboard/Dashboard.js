@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import Games from "../Games/Games"
 import GameFilter from "../GameFilter/GameFilter";
 import NewGame from "../NewGame/NewGame";
-// import GameLaunch from "../GameLaunch/GameLaunch";
+//import GameLaunch from "../GameLaunch/GameLaunch";
 
 
 const GAMES = [
@@ -25,18 +25,18 @@ const Dashboard = () => {
 
   useEffect(() => {
     console.log("useEffect on mount")
-  //  const gameStoraged = JSON.parse(localStorage.getItem("games"));
+    const gameStorage = JSON.parse(localStorage.getItem("games"));
 
-  //   if(gameStoraged) {
-  //     setGames(
-  //       gameStoraged.map((game) => ({
-  //         ...game,
-  //         dateLaunch: new Date(game.dateLaunch),
-  //       }))
-  //     );
-  //   } else {
-    //   }
-    localStorage.setItem("games", JSON.stringify(GAMES));
+    if(gameStorage) {
+      setGames(
+        gameStorage.map((game) => ({
+          ...game,
+          dateLaunch: new Date(game.dateLaunch),
+        }))
+      );
+    } else {
+      localStorage.setItem("games", JSON.stringify(GAMES));
+      }
   }, []);
 
   const addGameHandler = (game) => {
