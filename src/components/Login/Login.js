@@ -31,6 +31,8 @@ const Login = ({ onLogin }) => {
 
     if (passwordRef.current.value.length === 0) {
       passwordRef.current.focus();
+      passwordRef.current.style.borderColor = "red";
+      passwordRef.current.style.outline = "none";
       const newErrors = [...errors];
       newErrors[1].isError = true;
       setErrors(newErrors);
@@ -53,17 +55,17 @@ const Login = ({ onLogin }) => {
             value={email}
             ref={emailRef}
           />
-        </div>
         {errors[0].isError && <p>{errors[0].text}</p>}
+        </div>
         <div className="input-container">
           <input
             className="input-control"
             placeholder="Password"
             type="password"
             ref={passwordRef}
-          />
+            />
+            {errors[1].isError && <p>{errors[1].text}</p>}
         </div>
-        {errors[1].isError && <p>{errors[1].text}</p>}
         <button onClick={signInHandler} className="signin-button" type="button">
         Iniciar sesión
       </button>
