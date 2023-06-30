@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;400;900&family=Nunito:wght@400;800&display=swap');
+
+*{
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  color: black;
+}
+
+.games{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background-color: #1b3039;
+    padding: 20px 25px;
+    border-radius: 25px;
+    margin-left: 30%;
+    margin-right: 30%;
+}

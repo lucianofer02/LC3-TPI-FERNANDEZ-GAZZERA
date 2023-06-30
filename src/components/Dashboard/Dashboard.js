@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import "./Dashboard.css"
 
 // import NavBar from "../NavBar/NavBar"
 import Games from "../Games/Games"

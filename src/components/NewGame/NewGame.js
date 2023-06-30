@@ -22,7 +22,7 @@ const NewGame = ({ onGameAdded }) => {
       {showForm ? (
         <GameForm onHideForm={hideGameForm} onGameAdded={onGameAddedHandler}/>
       ) : (
-        <button onClick={showGameForm}>Registrar nuevo videojuego</button>
+        <button className = "btn btn-dark" onClick={showGameForm}>Registrar nuevo videojuego</button>
       )}
     </div>
   );

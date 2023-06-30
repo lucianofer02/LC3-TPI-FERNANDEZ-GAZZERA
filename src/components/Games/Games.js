@@ -1,4 +1,4 @@
-
+import "./Games.css"
 import GameItem from '../GameItem/GameItem'
 
 const Games = ({games, filterYear}) => {
